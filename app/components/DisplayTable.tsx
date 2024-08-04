@@ -26,7 +26,7 @@ const DisplayTable = ({
   };
 
   return (
-    <div className=" flex flex-col p-10 h-[fi%] max-w-6xl max-md:p-4 max-md:pt-10 bg-red-500">
+    <div className=" flex flex-col p-10 h-[fi%] max-w-6xl max-md:p-4 max-md:pt-10">
       <h1 className="text-xl font-bold ">{heading} Datas</h1>
       <div className="flex flex-col pt-5 h-fit">
         <div className="flex mb-2 sm:mb-4 justify-between items-center max-sm:flex-col max-sm:gap-1">
