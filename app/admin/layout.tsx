@@ -8,7 +8,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
 
     <div className="flex w-full max-h-[100vh] justify-between ">
       <Sidebar />
-      <main className="max-w-6xl flex-1 mx-auto py-4">{children}</main>
+      <main className="container mx-auto">{children}</main>
     </div>
   );
 };
