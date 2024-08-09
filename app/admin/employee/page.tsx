@@ -348,7 +348,7 @@ const columns: TableColumnType[] = [
     className: "w-2/12 sm:w-2/12 md:w-2/12 lg:w-2/12",
     Cell: ({ cell: { value } }: { cell: { value: any } }) => (
       <span
-        className={` font-semibold  rounded-full pt-1 pb-1 pl-3 pr-3 capitalize ${
+        className={` font-semibold  rounded-full  pb-1 pl-3 pr-3 capitalize ${
           value.toLowerCase() === "active" ? "text-[#1a513f] bg-[#D1FAE5]" : "text-[#6c2121] bg-[#F1C9C9]"
         }`}
       >
