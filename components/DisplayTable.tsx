@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useTable } from "react-table";
-import { ScrollArea } from "@/components/components/ui/scroll-area";
+import { ScrollArea } from "@/components/ui/scroll-area";
 const DisplayTable = ({
   columns,
   requests,

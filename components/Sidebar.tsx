@@ -82,7 +82,7 @@ import {
 //           <ul className="whitespace-pre px-2.5 text-[0.9rem] py-5 flex flex-col gap-1 font-medium overflow-x-hidden w-full scroll">
 //             <li
 //               onClick={() => setShow(!show)}
-//               className={`box ${path === "/dashboard" ? "active" : "box"}`}
+//               className={box ${path === "/dashboard" ? "active" : "box"}}
 //             >
 //               <Link
 //                 href={"/admin/dashboard"}
@@ -94,7 +94,7 @@ import {
 //             </li>
 //             <li
 //               onClick={() => setShow(!show)}
-//               className={`box ${path === "/employee" ? "active" : "box"}`}
+//               className={box ${path === "/employee" ? "active" : "box"}}
 //             >
 //               <Link href={"admin/employee"} className="flex gap-2 items-center">
 //                 <HiOutlineDatabase size={23} className="min-w-max" />
@@ -265,7 +265,7 @@ import {
 //             {/* settings */}
 //             <li
 //               onClick={() => setShow(!show)}
-//               className={`box ${path === "/settings" ? "active" : "box"}`}
+//               className={box ${path === "/settings" ? "active" : "box"}}
 //             >
 //               <Link href={"/settings"} className="flex gap-2 items-center">
 //                 <SlSettings size={23} className="min-w-max" />
