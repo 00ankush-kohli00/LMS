@@ -375,56 +375,57 @@ const Sidebar = () => {
   const [show, setShow] = useState<boolean>(false);
   const path = usePathname();
   return (
-    <aside className=" h-screen relative ">
+    <aside className=" h-screen relative">
       <button
         onClick={() => setShow(!show)}
-        className=" absolute box md:hidden z-50 duration-75 "
+        className=" absolute box md:hidden z-[999] duration-75 "
       >
         {show ? (
-          <IoMenuSharp size={32} className="absoulte left-2" />
+          <FaTimes size={23} />
         ) : (
-          <FaTimes size={32} />
+          <IoMenuSharp size={23} className="absoulte left-2" />
         )}
       </button>
 
       <div
-        className={`w-0  box absolute md:relative px-4 py-2 h-[98%] bg-white  flex-col  min-w-[20rem] z-40 shadow-xl items-center hidden md:flex ${
-          show ? " -translate-x-[100%] duration-200" : "translate-x-1 delay-75"
+        className={`max-md:absolute bg-white z-[90] flex items-center gap-6 md:relative px-4 py-2 h-screen flex-col w-[16rem] shadow-xl md:flex transition-all  ${
+          show
+            ? "translate-x-[0%] delay-75"
+            : "max-md:-translate-x-[100%] duration-200"
         } `}
-        
       >
         {/*header  */}
-        <h1 className="text-3xl text-blue-500 font-bold ">Admin</h1>
-        <div className="w-full flex  flex-col h-screen gap-1">
+        <h1 className="text-3xl text-blue-500 text-center font-bold ">Admin</h1>
+        <div className="overflow-y-auto w-full flex flex-col h-[70%] gap-1">
           {navlin.map((items, idx) => {
             const [subMenu, setSubMenu] = useState<boolean>();
             return (
               <>
                 <Link
-                  className={`"relative  flex flex-col justify-between box" ${
+                  className={`"relative flex flex-col justify-between box" ${
                     path === items.route ? "text-blue-500" : ""
                   }`}
                   href={items.route || "#"}
                   key={idx}
                 >
                   <div
-                    className={`box  w-full ${
-                      subMenu && "text-blue-400 font-semibold"
+                    className={`box justify-start hover:bg-blue-100 hover:text-blue-600 w-full hover:active ${
+                      subMenu && "text-blue-600 font-bold"
                     }`}
                     onClick={() => !items.submenu && (() => setShow(!show))}
                   >
-                    <items.icon size={32} className="w-8" />
+                    <items.icon size={23} className="w-fit" />
                     <h1
-                      className={`text-lg font-medium hover:text-xl hover:backdrop-blur-sm`}
+                      className={`text-base font-medium flex-1 hover:backdrop-blur-sm`}
                       onClick={items.submenu && (() => setSubMenu(!subMenu))}
                     >
                       {items.title}
                     </h1>
                     {items.submenu && (
                       <IoIosArrowDown
-                        size={24}
+                        size={23}
                         onClick={() => setSubMenu(!subMenu)}
-                        className={`absolute right-2 ${
+                        className={` ${
                           subMenu
                             ? "rotate-180 transition-all delay-75"
                             : "rotate-0 transition-all delay-75"
@@ -434,22 +435,19 @@ const Sidebar = () => {
                   </div>
 
                   <div
-                    className={`${subMenu ? "box" : "hidden"} flex flex-col `}
+                    className={`${subMenu ? "box" : "hidden"} flex flex-col`}
                   >
                     {items.submenu &&
                       items.submenu.map((subItems, idx) => (
                         <Link
-                          className={` flex  min-w-52  gap-2 ${
+                          className={` flex w-full gap-2 pl-8 ${
                             path === subItems.routes ? "text-blue-500" : ""
                           }`}
                           href={subItems.routes}
                           key={idx}
-                          
                         >
-                          <subItems.icons size={24} />
-                          <h1
-                            className={`text-base font-medium hover:text-lg `}
-                          >
+                          <subItems.icons size={18} />
+                          <h1 className={`text-base font-medium`}>
                             {subItems.title}
                           </h1>
                         </Link>
@@ -459,8 +457,8 @@ const Sidebar = () => {
               </>
             );
           })}
-          <div className="absolute bottom-4 py-5 border-slate-300 w-[16rem] flex justify-center items-center ">
-            <button className="w-[14rem] border border-gray-400 box active flex justify-center">
+          <div className="absolute left-0 bottom-6 py-5 w-[16rem] flex justify-center items-center ">
+            <button className="w-[14rem] border active border-slate-400 box active flex justify-center">
               Logout
             </button>
           </div>

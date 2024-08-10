@@ -60,7 +60,7 @@
 }
 
 .box {
-  @apply p-2 flex rounded-md gap-6 items-center md:cursor-pointer duration-300 font-medium;
+  @apply p-2 flex rounded-md gap-3 items-center md:cursor-pointer duration-300 font-medium;
 }
 
 /* applied directly active class - route match */
@@ -78,11 +78,27 @@
 }
 
 @layer utilities {
-  .no-scrollbar::-webkit-scrollbar{
+  /* .no-scrollbar::-webkit-scrollbar{
     display: none;
-  }
-  .no-scrollbar{
+  } */
+  /* .no-scrollbar{
     -ms-overflow-style: none;
     scrollbar-width: none;
+  } */
+  ::-webkit-scrollbar {
+    width: 6px; /* Width of the scrollbar */
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Background color of the track */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #d7d2d2; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Roundness of the scrollbar thumb */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Color of the scrollbar thumb on hover */
   }
 }
