@@ -372,7 +372,7 @@ const navlin: NavLink[] = [
 ];
 
 const Sidebar = () => {
-  const [show, setShow] = useState<boolean>(false);
+  const [show, setShow] = useState<boolean>();
   const path = usePathname();
   return (
     <aside className=" h-screen relative ">
@@ -388,8 +388,8 @@ const Sidebar = () => {
       </button>
 
       <div
-        className={`w-0  box absolute md:relative px-4 py-2 h-[98%] bg-white  flex-col  min-w-[20rem] z-40 shadow-xl items-center hidden md:flex ${
-          show ? " -translate-x-[100%] duration-200" : "translate-x-1 delay-75"
+        className={` box absolute md:relative px-4 py-2 h-[98%] bg-white  flex-col min-w-[18rem]  z-40 shadow-xl items-center hidden md:flex ${
+          show ? "-translate-x-[100%] duration-200" : "translate-x-1 delay-75"
         } `}
         
       >
